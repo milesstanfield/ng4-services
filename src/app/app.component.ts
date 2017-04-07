@@ -23,13 +23,12 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.artists = this.artistService.getArtists();
     this.subscription = this.artistService.getSelectedArtist().subscribe(
-      artist => { this.selectedArtist = artist; }
+      (artist: Artist) => { this.selectedArtist = artist; }
     );
   }
 
   ngOnDestroy() {
-    // unsubscribe to ensure no memory leaks
-    this.subscription.unsubscribe();
+    this.subscription.unsubscribe(); // ensures no memory leaks
   }
 
   setArtist(artist: Artist) {
