@@ -1,6 +1,5 @@
-<h1>
-  {{title}}
-</h1>
 <ul>
-  <li *ngFor="let artist of artists">{{artist.name}}</li>
+  Click an artist name to set artist on the observed service
+  <li *ngFor="let artist of artists" (click)="setArtist(artist)">{{artist.name}}</li>
+  <p>The Selected artist is <span *ngIf="selectedArtist">{{selectedArtist.name}}</span></p>
 </ul>
