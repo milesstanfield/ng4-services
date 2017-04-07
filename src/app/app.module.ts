@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { MoviesComponent } from './movies/movies.component';
 import { BooksComponent } from './books/books.component';
 import { BookService } from './book.service';
+import { ArtistService } from './artist.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { BookService } from './book.service';
     FormsModule,
     HttpModule
   ],
-  providers: [BookService],
+  providers: [BookService, ArtistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
