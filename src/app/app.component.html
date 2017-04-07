@@ -1,5 +1,6 @@
+<p>Click an artist name to set artist on the observed service</p>
 <ul>
-  Click an artist name to set artist on the observed service
   <li *ngFor="let artist of artists" (click)="setArtist(artist)">{{artist.name}}</li>
-  <p>The Selected artist is <span *ngIf="selectedArtist">{{selectedArtist.name}}</span></p>
 </ul>
+
+<p>The Selected artist is <span *ngIf="selectedArtist">{{selectedArtist.name}}</span></p>
