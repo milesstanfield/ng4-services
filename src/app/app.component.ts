@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { Artist } from './artist';
+import { ArtistService } from './artist.service';
 
 @Component({
   selector: 'aserv-root',
@@ -11,10 +12,7 @@ export class AppComponent {
   title = 'aserv works!';
   artists: Artist[];
 
-  constructor() {
-    this.artists = [
-      new Artist('miles'),
-      new Artist('laura')
-    ];
+  constructor(private artistService: ArtistService) {
+    this.artists = artistService.getArtists();
   }
 }
